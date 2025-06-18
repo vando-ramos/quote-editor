@@ -9,5 +9,5 @@ first = Quote.create!(name: "First quote", company: kmpg)
 second = Quote.create!(name: "Second quote", company: kmpg)
 third = Quote.create!(name: "Third quote", company: kmpg)
 
-LineItemDate.create!(date: Date.current,quote: first)
-LineItemDate.create!(date: Date.current + 1.week,quote: first)
+LineItemDate.create!(date: Date.current, quote: first)
+LineItemDate.create!(date: Date.current + 1.week, quote: first)
