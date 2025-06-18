@@ -32,7 +32,7 @@ RSpec.describe "Quotes", type: :system do
   it "updates a quote" do
     kmpg = Company.create!(name: 'KMPG')
     user = User.create!(email: 'accountant@kpmg.com', password: 'password', company_id: kmpg.id)
-    quote = Quote.create!(name: "First quote", company_id: kmpg.id)
+    Quote.create!(name: "First quote", company_id: kmpg.id)
   
     login_as user
     visit root_path
