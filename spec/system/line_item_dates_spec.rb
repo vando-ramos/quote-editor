@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "LineItemDates", type: :system do
+  include ActionView::Helpers::NumberHelper
+  
   it "creates a new line item date" do
     kmpg = Company.create!(name: 'KMPG')
     user = User.create!(email: 'accountant@kpmg.com', password: 'password', company: kmpg)
@@ -50,5 +52,6 @@ RSpec.describe "LineItemDates", type: :system do
     end
 
     expect(page).not_to have_content(I18n.l(Date.current, format: :long))
+    expect(page).to have_content(number_to_currency(first.total_price))
   end
 end

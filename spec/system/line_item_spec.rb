@@ -23,6 +23,7 @@ RSpec.describe "LineItems", type: :system do
     expect(page).to have_content("First quote")
     expect(page).to have_content("Animation")
     expect(page).to have_content(number_to_currency(1234))
+    expect(page).to have_content(number_to_currency(first.total_price))
   end
 
   it "updates a line item" do
@@ -44,6 +45,7 @@ RSpec.describe "LineItems", type: :system do
 
     expect(page).to have_content("Capybara article")
     expect(page).to have_content(number_to_currency(1234))
+    expect(page).to have_content(number_to_currency(first.total_price))
     expect(page).not_to have_content("Room today")
   end
 
@@ -63,5 +65,6 @@ RSpec.describe "LineItems", type: :system do
 
     expect(page).not_to have_content("Room today")
     expect(page).to have_content("Meeting room")
+    expect(page).to have_content(number_to_currency(first.total_price))
   end
 end
